@@ -311,7 +311,6 @@ Renovate's own GitHub App mode. The concepts that matter:
 ```
 .
 ├── README.md                              (this file)
-├── LICENSE
 └── scripts/
     ├── commit-filter-action.ts            (Gate 1 — author check)
     └── batch-deploy-with-exclusions.ts    (Gate 2 — tag/pattern exclusion)
