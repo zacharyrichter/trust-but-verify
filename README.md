@@ -47,17 +47,17 @@ and aren't well-covered in either project's official docs.
 ## Architecture overview
 
 ```
-┌─────────────┐     scheduled/manual      ┌──────────────────┐
-│  Git server  │ ────────────────────────▶ │  Renovate (CI)    │
-│ (self-hosted)│                            │  opens PRs        │
-└─────────────┘                            └──────────────────┘
+┌──────────────┐     scheduled/manual      ┌──────────────────┐
+│  Git server  │ ───────────────────────▶ │  Renovate (CI)    │
+│ (self-hosted)│                           │  opens PRs        │
+└──────────────┘                            └──────────────────┘
        │                                            
        │ human reviews & merges PR
        ▼
-┌─────────────┐   webhook (push event)    ┌──────────────────┐
-│  Git server  │ ────────────────────────▶ │ Commit-filter      │
-│              │                            │ Action (Komodo)    │
-└─────────────┘                            └──────────────────┘
+┌─────────────┐   webhook (push event)    ┌───────────────────┐
+│  Git server │ ───────────────────────▶ │ Commit-filter      │
+│             │                           │ Action (Komodo)   │
+└─────────────┘                           └───────────────────┘
                                                      │
                                      commit author == bot account?
                                                      │ yes
